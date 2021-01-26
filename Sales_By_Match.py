@@ -30,14 +30,19 @@ import re
 import sys
 
 # Complete the sockMerchant function below.
-from itertools import groupby
-n = int(raw_input())
-c = map(int, raw_input().split())
-
-ans = 0
-for val in [len(list(group)) for key, group in groupby(sorted(c))]:
-    ans = ans + val/2
-print ans
+def sockMerchant(n, ar):
+    total_pairs = 0
+    i = 0
+    colours = list(set(ar))
+    if n <= 1:
+        print(total_pairs)
+    else:
+        while i< len(colours):
+            colour = colours[i]
+            total_pairs = total_pairs + int(ar.count(colour) / 2)    
+            i = i + 1
+        print(total_pairs)
+    return total_pairs
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
