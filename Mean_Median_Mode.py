@@ -25,8 +25,12 @@
 # 4978
 
 # Solution 
-Enter your code here. Read input from STDIN. Print output to STDOUT
-import statistics
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+# from datetime import datetime
+# start_time = datetime.now()
+
+# import statistics
 
 N = int(input())
 X = list(map(int, input().split()))
@@ -46,12 +50,16 @@ else:
 all_values = num_count.values()
 max_value = max(all_values)
 if max_value != 1:
-    mode = statistics.mode(x_sort)
-    
-    # mode = max(num_count, key = num_count.get)
+    # mode = statistics.mode(x_sort)
+    mode = max(list(set(x_sort)), key = x_sort.count)
+     
+#     # mode = max(num_count, key = num_count.get)
 else:
     mode = x_sort[0]
     
 print(round(mean,1))
-print(round(median,1))
+print(float(median))
 print(mode)
+
+# end_time = datetime.now()
+# print('Duration: {}'.format(end_time - start_time))
