@@ -24,9 +24,10 @@
 # 44627.5
 # 4978
 
-# Solution UNFINISHED
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-#import sys
+# Solution 
+Enter your code here. Read input from STDIN. Print output to STDOUT
+import statistics
+
 N = int(input())
 X = list(map(int, input().split()))
 
@@ -36,18 +37,21 @@ nums = list(set(X))
 num_count = {} 
 for num in nums:
     num_count[num] = X.count(num)
+# num_count = sorted(num_count.items(), key=lambda x: x[1])    
 if N % 2 != 0:
     median = x_sort[int(N/2)+1]
 else:
     median = (x_sort[int(N/2)-1] + x_sort[int(N/2)]) / 2
-    
+# median = statistics.median(X)
 all_values = num_count.values()
 max_value = max(all_values)
 if max_value != 1:
-    mode = max(num_count, key = num_count.get)
+    mode = statistics.mode(x_sort)
+    
+    # mode = max(num_count, key = num_count.get)
 else:
     mode = x_sort[0]
     
-print (mean)
-print(median)
+print(round(mean,1))
+print(round(median,1))
 print(mode)
