@@ -25,7 +25,8 @@ aba
 10
 Sample Output 0
 7
-""
+"""
+
 #Solution
 #!/bin/python3
 
