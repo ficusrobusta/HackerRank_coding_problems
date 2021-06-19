@@ -51,3 +51,34 @@ for i in queries:
     else:
         print("Not found")
 
+        
+-------------------------------
+# Updated 19th June 2021
+# Was encountering runtime error with the above code, have now implemented a try-except block which seems to have done the trick
+
+n = int(input())
+d = {}
+
+for i in range(n):        
+    text = input().split()     
+    d[text[0]] = text[1]       
+
+# query = stdin.read().splitlines()
+# lookup = len(query)
+# i = 0
+# for i in range(i,lookup):
+#     if d[query[i]]: 
+#         print(query[i]+'='+d[query[i]])   
+#         i+=1
+#     else:
+#         print("Not found")
+#         i+=1
+while True:
+    try:
+        lookup = input()
+    except EOFError as e:
+        break
+    if lookup not in d.keys():
+        print("Not found")
+    else:
+        print(f"{lookup}={d[lookup]}")
