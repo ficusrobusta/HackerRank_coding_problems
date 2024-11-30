@@ -38,6 +38,7 @@ Sample Output
 
 a;div;p
 """
+#!/bin/python3
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 import re
 num = int(input())
